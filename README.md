@@ -179,7 +179,7 @@ nvim-treesitter/nvim-treesitter 为指定语言开启语法高亮
 
 快捷键|功能
 -|-
-`␣` `l` `g`|打开 Lazygit
+`␣` `g` `g`|打开 Lazygit
 `Q`|退出 Lazygit
 
 ### 输入法

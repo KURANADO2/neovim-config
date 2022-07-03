@@ -458,7 +458,7 @@ nmap mjj <Plug>BookmarkMoveDown
 nmap mg <Plug>BookmarkMoveToLine
 
 " ==================== lazygit ====================
-nnoremap <silent> <leader>lg :LazyGit<CR>
+nnoremap <silent> <leader>gg :LazyGit<CR>
 
 " ==================== lsp and cmp ====================
 lua << EOF
