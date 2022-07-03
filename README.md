@@ -1,5 +1,8 @@
+![](images/demo.png)
+
 ## 如何安装
 
+### 克隆仓库
 首先确保已经安装 [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 克隆本仓库
@@ -8,7 +11,7 @@
 git clone git@github.com:KURANADO2/neovim-config.git --depth=1 ~/.config/nvim
 ```
 
-## 插件安装
+### 插件安装
 
 进入 neovim 执行
 
@@ -16,7 +19,7 @@ git clone git@github.com:KURANADO2/neovim-config.git --depth=1 ~/.config/nvim
 :PlugInstall
 ```
 
-## 插件依赖安装
+### 插件依赖安装
 
 ```bash
 # nvim-telescope/telescope.nvim 所需依赖
@@ -30,7 +33,7 @@ npm install -g live-server
 brew tap daipeihust/tap && brew install im-select
 ```
 
-## 自动补全
+### 自动补全
 
 neovim/nvim-lspconfig 自动补全
 
@@ -52,7 +55,7 @@ cd ../..
 ./3rd/luamake/luamake rebuild
 ```
 
-## 语法高亮
+### 语法高亮
 
 nvim-treesitter/nvim-treesitter 为指定语言开启语法高亮
 
