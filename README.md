@@ -1,3 +1,7 @@
+<div align='center'>
+  <img src='https://img.shields.io/badge/neovim-0.7.2-4D8A38' alt='icon'/>
+</div>
+
 ![](images/demo.png)
 
 ## 如何安装
@@ -44,8 +48,7 @@ brew install rust-analyzer
 npm i -g pyright
 # Lua
 brew install ninja
-# clone project
-cd ~
+cd ~/Opt
 git clone --depth=1 https://github.com/sumneko/lua-language-server
 cd lua-language-server
 git submodule update --depth 1 --init --recursive
@@ -55,9 +58,22 @@ cd ../..
 ./3rd/luamake/luamake rebuild
 ```
 
+环境变量配置
+
+~/.zshrc 文件增加如下配置
+
+```bash
+# lua-language-server
+export LUA_LANGUAGE_SERVER_HOME='/Users/jing/Opt/lua-language-server'
+
+# PATH
+export PATH="$LUA_LANGUAGE_SERVER_HOME/bin"
+```
+
 ### 语法高亮
 
 nvim-treesitter/nvim-treesitter 为指定语言开启语法高亮
+进入 neovim 执行
 
 ```bash
 :TSInstall c
@@ -130,9 +146,9 @@ nvim-treesitter/nvim-treesitter 为指定语言开启语法高亮
 快捷键|功能
 -|-
 `←`|横向调整窗口大小
-`→`|纵向调整窗口大小
+`→`|横向调整窗口大小
 `↑`|纵向调整窗口大小
-`↓`|横向调整窗口大小
+`↓`|纵向调整窗口大小
 
 ### 窗口切换
 
