@@ -15,14 +15,6 @@
 git clone git@github.com:KURANADO2/neovim-config.git --depth=1 ~/.config/nvim
 ```
 
-### 插件安装
-
-进入 neovim 执行
-
-```bash
-:PlugInstall
-```
-
 ### 插件依赖安装
 
 ```bash
@@ -35,6 +27,22 @@ brew install pandoc
 npm install -g live-server
 # Esc 切换为英文输入法所需依赖
 brew tap daipeihust/tap && brew install im-select
+```
+
+### 插件安装
+
+进入 neovim 执行
+
+```bash
+:PlugInstall
+```
+
+### 部分插件需编译
+
+```bash
+cd ~/.config/nvim/plugged/vim-hexokinase
+# 需确保已经安装了 Golang
+make hexokinase
 ```
 
 ### 自动补全
