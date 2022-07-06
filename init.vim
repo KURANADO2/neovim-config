@@ -302,6 +302,8 @@ Plug 'davidgranstrom/nvim-markdown-preview'
 " Input method switch
 " When press Esc key will auto switch to default input method(Please execute 'brew tap daipeihust/tap && brew install im-select' under command line to install im-select first)
 Plug 'ybian/smartim'
+" Range selection
+Plug 'gcmt/wildfire.vim'
 call plug#end()
 
 " plugs config
@@ -565,6 +567,13 @@ map sr :MarkdownPreview<CR>
 " ==================== smarttim ====================
 " set the default input method will to swithc when press Esc key, you can find current input method id by execute 'im-select' under command line
 let g:smartim_default = 'com.apple.keylayout.ABC'
+
+" ==================== wildfile ====================
+map <c-b> <Plug>(wildfire-quick-select)
+let g:wildfire_objects = {
+    \ "*" : ["i'", 'i"', "i)", "i]", "i}", "it"],
+    \ "html,xml" : ["at", "it"],
+\ }
 
 endif
 
