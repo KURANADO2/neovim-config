@@ -302,6 +302,8 @@ Plug 'davidgranstrom/nvim-markdown-preview'
 " Input method switch
 " When press Esc key will auto switch to default input method(Please execute 'brew tap daipeihust/tap && brew install im-select' under command line to install im-select first)
 Plug 'ybian/smartim'
+" Hightlight yank
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 " plugs config
@@ -572,6 +574,9 @@ map sr :MarkdownPreview<CR>
 " ==================== smarttim ====================
 " set the default input method will to swithc when press Esc key, you can find current input method id by execute 'im-select' under command line
 let g:smartim_default = 'com.apple.keylayout.ABC'
+
+" ==================== vim-highlightedyank ====================
+let g:highlightedyank_highlight_duration = 200
 
 endif
 
