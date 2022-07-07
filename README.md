@@ -27,6 +27,8 @@ brew install pandoc
 npm install -g live-server
 # Esc 切换为英文输入法所需依赖
 brew tap daipeihust/tap && brew install im-select
+# 识别 python3, See Also: https://www.reddit.com/r/neovim/comments/i65pwd/no_python3_provider_found_run_checkhealth_provider/
+python3 -m pip install --user --upgrade pynvim
 ```
 
 ### 插件安装
@@ -139,6 +141,13 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 快捷键|功能
 -|-
 `c` `s` `'` `"`|将单引号更改为双引号（此处的单引号、双引号也可以替换为其它符号，如圆括号、中括号、花括号等）
+
+### Json 格式化
+
+快捷键|功能
+-|-
+`␣` `p` `j`|预览格式化后的 Json
+`␣` `w` `j`|格式化 Json
 
 ### 文件
 
