@@ -96,14 +96,23 @@ nvim-treesitter/nvim-treesitter 为指定语言开启语法高亮
 
 ### 光标移动
 
+Tips：为了突破 Mac 系统按键重复限制，建议执行如下两条命令以加速按键重复以及缩短重复前间隔（命令执行后需重启系统方可生效）
+
+```bash
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+```
+
 快捷键|功能
 -|-
 `J`|向下移动 5 行
 `K`|向上移动 5 行
 `H`|移动到行首（行首不为空的字符处）
 `L`|移动到行尾（行首不为空的字符处）
-`⌃` `J`|向下翻页 5 行
-`⌃` `K`|向上翻页 5 行
+`⌃` `j`|向下翻页 5 行
+`⌃` `k`|向上翻页 5 行
+`⌃` `h`|向左翻页 10 个字符
+`⌃` `l`|向右翻页 10 个字符
 
 ### 多光标
 
