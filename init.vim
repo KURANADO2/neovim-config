@@ -212,6 +212,9 @@ noremap L $
 " Move up/down the view port without mving the cursor
 noremap <C-j> 5<C-e>
 noremap <C-k> 5<C-y>
+" Move left/right the view port without mving the cursor
+noremap <C-h> 20zh
+noremap <C-l> 20zl
 
 " Insert mode cursor movement
 " Spell tips(Only effect under INSERT mode)
