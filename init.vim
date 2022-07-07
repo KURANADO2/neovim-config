@@ -82,8 +82,10 @@ set relativenumber
 set cursorline
 " Highlight current column
 " set cursorcolumn
-" Auto wrap line
-set wrap
+" Auto wrap line(default value)
+" set wrap
+" Disable auto wrap
+set nowrap
 " Show command
 set showcmd
 " Auto complete command with TAB
