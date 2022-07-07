@@ -309,6 +309,8 @@ Plug 'davidgranstrom/nvim-markdown-preview'
 Plug 'ybian/smartim'
 " Hightlight yank
 Plug 'machakann/vim-highlightedyank'
+" Json format
+Plug 'axiaoxin/vim-json-line-format'
 call plug#end()
 
 " plugs config
