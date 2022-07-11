@@ -112,6 +112,8 @@ set visualbell
 set lazyredraw
 " Show a verticle line on the 120th chars
 set colorcolumn=120
+" Enable hidden, See also: https://github.com/romgrk/barbar.nvim/issues/153 https://neovim.io/doc/user/options.html#'hidden'
+set hidden
 
 " Save cursor location when next enter vim
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
