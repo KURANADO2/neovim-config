@@ -206,7 +206,7 @@ vnoremap Y "+y
 " Folding
 noremap <LEADER>o za
 " Selete to the line end
-noremap \v v$h
+noremap vL v$h
 " Go to start of the line
 noremap H ^
 " Go to end of the line
@@ -217,6 +217,7 @@ noremap <C-k> 5<C-y>
 " Move left/right the view port without mving the cursor
 noremap <C-h> 20zh
 noremap <C-l> 20zl
+noremap U <C-r>
 
 " Insert mode cursor movement
 " Spell tips(Only effect under INSERT mode)
