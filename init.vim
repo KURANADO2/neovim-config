@@ -218,6 +218,8 @@ noremap <C-k> 5<C-y>
 noremap <C-h> 20zh
 noremap <C-l> 20zl
 noremap U <C-r>
+noremap o o<Esc>
+noremap O O<Esc>
 
 " Insert mode cursor movement
 " Spell tips(Only effect under INSERT mode)

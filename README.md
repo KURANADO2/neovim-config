@@ -145,6 +145,13 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 `u`|撤销
 `U`|重做
 
+### 撤销
+
+快捷键|功能
+-|-
+`O`|在光标上方插入新行，但不进入插入模式
+`o`|在光标下方插入新行，但不进入插入模式
+
 ### 更改包裹符号
 
 快捷键|功能
