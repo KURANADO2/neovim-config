@@ -114,6 +114,8 @@ set lazyredraw
 set colorcolumn=120
 " Enable hidden, See also: https://github.com/romgrk/barbar.nvim/issues/153 https://neovim.io/doc/user/options.html#'hidden'
 set hidden
+" Sovle The tips of 'E21: Cannot make changes, 'Modifiable' is off'
+set modifiable
 
 " Save cursor location when next enter vim
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -320,6 +322,8 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'stevearc/aerial.nvim'
 " Aligning text
 Plug 'godlygeek/tabular'
+" Markdown table
+Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
 
 " plugs config
@@ -839,7 +843,7 @@ require("aerial").setup({
 EOF
 
 " ==================== tabular ====================
-nnoremap <leader>mf :Tab /
+nnoremap <leader>a :Tabular /
 
 endif
 
