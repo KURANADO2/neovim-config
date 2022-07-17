@@ -110,7 +110,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 `J`     | 向下移动 5 行
 `K`     | 向上移动 5 行
 `H`     | 移动到行首（行首不为空的字符处）
-`L`     | 移动到行尾（行首不为空的字符处）
+`L`     | 移动到行尾
 `⌃` `j` | 向下翻页 5 行
 `⌃` `k` | 向上翻页 5 行
 `⌃` `h` | 向左翻页 10 个字符
