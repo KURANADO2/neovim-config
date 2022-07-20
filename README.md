@@ -134,9 +134,10 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 ### 选中
 
-快捷键 | 功能
--      | -
-`↩︎`    | 扩选（相当于 vi' vi" vi( vi{ 等）
+快捷键      | 功能
+-           | -
+`v` `i` `e` | 全选
+`↩︎`         | 扩选（相当于 vi' vi" vi( vi{ 等）
 
 ### 撤销
 
