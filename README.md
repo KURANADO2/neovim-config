@@ -182,6 +182,8 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | `p`     | 粘贴文件                                                        |
 | `a`     | 创建文件或目录（如果以 / 结尾则表示创建目录，否则即为创建文件） |
 | `R`     | 刷新文件树                                                      |
+| `I`     | 显示/隐藏 .gitignore 忽略的文件                                 |
+| `H`     | 显示/隐藏 dotfiles（隐藏文件）                                  |
 
 ### 大纲
 
