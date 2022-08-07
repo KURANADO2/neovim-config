@@ -325,8 +325,6 @@ Plug 'stevearc/aerial.nvim'
 Plug 'godlygeek/tabular'
 " Markdown table
 Plug 'dhruvasagar/vim-table-mode'
-" Sneak
-Plug 'justinmk/vim-sneak'
 call plug#end()
 
 " plugs config
@@ -849,7 +847,3 @@ EOF
 nnoremap <leader>a :Tabular /
 
 endif
-
-" ==================== Sneak ====================
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
