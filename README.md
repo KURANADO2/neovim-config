@@ -1,3 +1,19 @@
+
+## packer
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+```bash
+# nvim-telescope/telescope.nvim 所需依赖
+brew install ripgrep
+npm install -g fd-find
+```
+
+
+-----------------
+
 <div align='center'>
   <img src='https://img.shields.io/badge/neovim-0.7.2-4D8A38' alt='icon'/>
 </div>
