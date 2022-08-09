@@ -11,6 +11,14 @@ brew install ripgrep
 npm install -g fd-find
 ```
 
+```bash
+brew install stylua
+```
+
+```bash
+pnpm i -D prettier eslint
+```
+
 
 -----------------
 

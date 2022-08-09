@@ -1,5 +1,5 @@
 -- 基础设置
-require('basic')
+require("basic")
 -- Packer 插件管理
 require("plugins")
 -- 快捷键映射
@@ -14,6 +14,11 @@ require("plugin-config.telescope")
 require("plugin-config.dashboard")
 require("plugin-config.project")
 require("plugin-config.nvim-treesitter")
+require("plugin-config.indent-blankline")
 
 -- 内置 LSP
 require("lsp.setup")
+require("lsp.cmp")
+require("lsp.ui")
+-- require("lsp.formatter")
+require("lsp.null-ls")
