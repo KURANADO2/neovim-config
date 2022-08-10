@@ -35,6 +35,15 @@ null_ls.setup({
 			extra_filetypes = { "njk" },
 			prefer_local = "node_modules/.bin",
 		}),
+		-- rustfmt
+		formatting.rustfmt,
+		-- Python
+		-- pip install black
+		-- asdf reshim python
+		formatting.black.with({ extra_args = { "--fast" } }),
+		-- Ruby
+		-- gem install rubocop
+		formatting.rubocop,
 		-- Diagnostics  ---------------------
 		diagnostics.eslint.with({
 			prefer_local = "node_modules/.bin",

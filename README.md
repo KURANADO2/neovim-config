@@ -19,6 +19,10 @@ brew install stylua
 pnpm i -D prettier eslint
 ```
 
+```bash
+rustup component add rustfmt
+```
+
 
 -----------------
 

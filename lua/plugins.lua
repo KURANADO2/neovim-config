@@ -50,6 +50,8 @@ packer.startup(function(use)
 	use("b0o/schemastore.nvim")
 	-- TypeScript 增强
 	use({ "jose-elias-alvarez/nvim-lsp-ts-utils", requires = "nvim-lua/plenary.nvim" })
+	-- Rust 增强
+	use("simrat39/rust-tools.nvim")
 end)
 
 -- 每次保存 plugins.lua 自动安装插件
