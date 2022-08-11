@@ -39,10 +39,10 @@ map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
 map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
 
 -- 光标移动
-map("n", "J", "5j", opt)
-map("n", "K", "5k", opt)
-map("n", "H", "^", opt)
-map("n", "L", "$", opt)
+map("", "J", "5j", opt)
+map("", "K", "5k", opt)
+map("", "H", "^", opt)
+map("", "L", "$", opt)
 
 -- visual 模式下缩进代码
 map("v", "<", "<gv", opt)
@@ -52,9 +52,8 @@ map("v", ">", ">gv", opt)
 -- map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- 选中文本
-map("n", "vH", "v^", opt)
-map("n", "vL", "v$h", opt)
-map("n", "vie", "ggVG", opt)
+map("", "vL", "v$h", opt)
+map("", "vie", "ggVG", opt)
 
 -- 上下翻页
 map("n", "<C-j>", "5<C-e>", opt)
@@ -64,7 +63,7 @@ map("n", "<C-k>", "5<C-y>", opt)
 map("v", "p", '"_dP', opt)
 
 -- 大小写
-map("n", "`", "~", opt)
+map("", "`", "~", opt)
 
 -- 重做
 map("n", "U", "<C-r>", opt)
@@ -96,7 +95,7 @@ map("i", "<C-l>", "<ESC>A", opt)
 local pluginKeys = {}
 
 -- nvim-tree
--- alt + m 键打开关闭tree
+-- 打开/关闭 tree
 map("n", "tt", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
@@ -135,6 +134,8 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 map("n", "<LEADER>ff", ":Telescope find_files<CR>", opt)
 -- 全局搜索
 map("n", "<LEADER>fg", ":Telescope live_grep<CR>", opt)
+-- 定位文件
+map("n", "<LEADER>n", ":NvimTreeFindFile<CR>", opt)
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {
 	i = {
@@ -235,6 +236,87 @@ pluginKeys.mapTsLSP = function(mapbuf)
 	mapbuf("n", "gs", ":TSLspOrganize<CR>", opt)
 	mapbuf("n", "gr", ":TSLspRenameFile<CR>", opt)
 	mapbuf("n", "gi", ":TSLspImportAll<CR>", opt)
+end
+
+-- gitsigns
+pluginKeys.gitsigns_on_attach = function(bufnr)
+	local gs = package.loaded.gitsigns
+
+	local function map(mode, l, r, opts)
+		opts = opts or {}
+		opts.buffer = bufnr
+		vim.keymap.set(mode, l, r, opts)
+	end
+
+	-- Navigation
+	map("n", "<leader>gj", function()
+		if vim.wo.diff then
+			return "]c"
+		end
+		vim.schedule(function()
+			gs.next_hunk()
+		end)
+		return "<Ignore>"
+	end, { expr = true })
+
+	map("n", "<leader>gk", function()
+		if vim.wo.diff then
+			return "[c"
+		end
+		vim.schedule(function()
+			gs.prev_hunk()
+		end)
+		return "<Ignore>"
+	end, { expr = true })
+
+	map({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>")
+	map("n", "<leader>gS", gs.stage_buffer)
+	map("n", "<leader>gu", gs.undo_stage_hunk)
+	map({ "n", "v" }, "<leader>gr", ":Gitsigns reset_hunk<CR>")
+	map("n", "<leader>gR", gs.reset_buffer)
+	map("n", "<leader>gp", gs.preview_hunk)
+	map("n", "<leader>gb", function()
+		gs.blame_line({ full = true })
+	end)
+	map("n", "<leader>gd", gs.diffthis)
+	map("n", "<leader>gD", function()
+		gs.diffthis("~")
+	end)
+	-- toggle
+	map("n", "<leader>gtd", gs.toggle_deleted)
+	map("n", "<leader>gtb", gs.toggle_current_line_blame)
+	-- Text object
+	map({ "o", "x" }, "ig", ":<C-U>Gitsigns select_hunk<CR>")
+end
+
+-- comment
+pluginKeys.comment = {
+	-- Normal 模式快捷键
+	toggler = {
+		line = "gcc", -- 行注释
+		block = "gbc", -- 块注释
+	},
+	-- Visual 模式
+	opleader = {
+		line = "gc",
+		bock = "gb",
+	},
+}
+-- ctrl + /
+map("n", "<C-_>", "gcc", { noremap = false })
+map("v", "<C-_>", "gcc", { noremap = false })
+
+-- 自定义 toggleterm 3 个不同类型的命令行窗口
+-- <leader>ta 浮动
+-- <leader>tb 右侧
+-- <leader>tc 下方
+-- 特殊lazygit 窗口，需要安装lazygit
+-- <leader>tg lazygit
+pluginKeys.mapToggleTerm = function(toggleterm)
+	vim.keymap.set({ "n", "t" }, "<leader>ta", toggleterm.toggleA)
+	vim.keymap.set({ "n", "t" }, "<leader>tb", toggleterm.toggleB)
+	vim.keymap.set({ "n", "t" }, "<leader>tc", toggleterm.toggleC)
+	vim.keymap.set({ "n", "t" }, "<leader>tg", toggleterm.toggleG)
 end
 
 return pluginKeys
