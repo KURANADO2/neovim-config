@@ -62,8 +62,24 @@ packer.startup(function(use)
 	use("ur4ltz/surround.nvim")
 	-- terminal
 	use({ "akinsho/toggleterm.nvim" })
-	-- smartim
+	-- 输入法切换
 	use({ "ybian/smartim" })
+	-- Json 格式化
+	use({ "axiaoxin/vim-json-line-format" })
+	-- 滚动条
+	use({ "petertriho/nvim-scrollbar" })
+	-- 文本对齐
+	use({ "godlygeek/tabular" })
+	-- Markdown 表格
+	use({ "dhruvasagar/vim-table-mode" })
+	-- 大纲
+	use({ "stevearc/aerial.nvim" })
+	-- 搜索高亮提示
+	use({ "kevinhwang91/nvim-hlslens" })
+	-- 多光标
+	use({ "mg979/vim-visual-multi" })
+	-- Markdown 预览
+	use({ "davidgranstrom/nvim-markdown-preview" })
 end)
 
 -- 每次保存 plugins.lua 自动安装插件

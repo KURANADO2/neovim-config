@@ -3,7 +3,7 @@ vim.g.maplocalleader = " "
 
 local map = vim.api.nvim_set_keymap
 -- 复用 opt 参数
-local opt = { noremap = true, silent = true }
+local opt = { noremap = true, silent = false }
 
 -- 取消 s 默认功能
 map("n", "s", "", opt)
@@ -12,6 +12,10 @@ map("n", "sh", ":set nosplitright<CR>:vsplit<CR>", opt)
 map("n", "sj", ":set splitbelow<CR>:split<CR>", opt)
 map("n", "sk", ":set nosplitbelow<CR>:split<CR>", opt)
 map("n", "sl", ":set splitright<CR>:vsplit<CR>", opt)
+-- 水平布局转换成垂直布局
+map("n", "sf", "<C-w>t<C-w>H", opt)
+-- 垂直布局转换成水平布局
+map("n", "sd", "<C-w>t<C-w>K", opt)
 -- 窗口跳转
 map("n", "<LEADER>h", "<C-w>h", opt)
 map("n", "<LEADER>j", "<C-w>j", opt)
@@ -58,6 +62,9 @@ map("", "vie", "ggVG", opt)
 -- 上下翻页
 map("n", "<C-j>", "5<C-e>", opt)
 map("n", "<C-k>", "5<C-y>", opt)
+-- 左右翻页
+map("n", "<C-h>", "20zh", opt)
+map("n", "<C-l>", "20zl", opt)
 
 -- 在visual 模式里粘贴不要复制
 map("v", "p", '"_dP', opt)
@@ -122,6 +129,10 @@ pluginKeys.nvimTreeList = {
 -- 左右Tab切换
 map("n", "E", ":BufferLineCyclePrev<CR>", opt)
 map("n", "R", ":BufferLineCycleNext<CR>", opt)
+map("n", "W", ":BufferLineGoToBuffer 1<CR>", opt)
+map("n", "T", ":BufferLineGoToBuffer -1<CR>", opt)
+map("n", "th", ":BufferLineMovePrev<CR>", opt)
+map("n", "tl", ":BufferLineMoveNext<CR>", opt)
 -- 关闭
 --"moll/vim-bbye"
 map("n", "<C-w>", ":Bdelete!<CR>", opt)
@@ -317,6 +328,28 @@ pluginKeys.mapToggleTerm = function(toggleterm)
 	vim.keymap.set({ "n", "t" }, "<leader>tb", toggleterm.toggleB)
 	vim.keymap.set({ "n", "t" }, "<leader>tc", toggleterm.toggleC)
 	vim.keymap.set({ "n", "t" }, "<leader>tg", toggleterm.toggleG)
+end
+
+-- tabular
+pluginKeys.mapTabular = function()
+	map("n", "<LEADER>a", ":Tabular /", opt)
+end
+
+-- aerial
+pluginKeys.mapAerial = function(bufnr)
+	-- Toggle the aerial window with <leader>a
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>o", "<cmd>AerialToggle!<CR>", {})
+	-- Jump forwards/backwards with '{' and '}'
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "{", "<cmd>AerialPrev<CR>", {})
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "}", "<cmd>AerialNext<CR>", {})
+	-- Jump up the tree with '[[' or ']]'
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "[[", "<cmd>AerialPrevUp<CR>", {})
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "]]", "<cmd>AerialNextUp<CR>", {})
+end
+
+-- nvim-markdown-preview
+pluginKeys.mapMarkdownPreview = function()
+	map("n", "<LEADER>mp", ":MarkdownPreview<CR>", opt)
 end
 
 return pluginKeys

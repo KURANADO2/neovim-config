@@ -23,6 +23,10 @@ require("plugin-config.comment")
 require("plugin-config.surround")
 require("plugin-config.toggleterm")
 require("plugin-config.smartim")
+require("plugin-config.nvim-scrollbar")
+require("plugin-config.tabular")
+require("plugin-config.aerial")
+require("plugin-config.nvim-markdown-preview")
 
 -- 内置 LSP
 require("lsp.setup")
