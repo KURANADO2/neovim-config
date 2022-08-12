@@ -19,7 +19,7 @@ packer.startup(function(use)
     -- project
     use("ahmedkhalf/project.nvim")
     -- dashboard-nvim
-    use({ "glepnir/dashboard-nvim", commit = "a36b3232c98616149784f2ca2654e77caea7a522" })
+    use({ "glepnir/dashboard-nvim"})
     -- treesitter
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     --------------------- LSP --------------------
