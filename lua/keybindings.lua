@@ -36,7 +36,7 @@ map("n", "s=", "<C-w>=", opt)
 -- Terminal相关
 -- map("n", "<leader>t", ":set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>", opt)
 -- map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
--- map("t", "<Esc>", "<C-\\><C-n>", opt)
+map("t", "<Esc>", "<C-\\><C-n>", opt)
 -- map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
 -- map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
 -- map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
@@ -88,11 +88,11 @@ map("n", "#", "#zz", opt)
 map("n", "<LEADER><CR>", ":nohlsearch<CR>", opt)
 
 -- 保存
-map("n", "S", ":w<CR>", opt)
+map("", "S", ":w<CR>", opt)
 
 -- 退出
 -- map("n", "qq", ":q!<CR>", opt)
-map("n", "Q", ":q<CR>", opt)
+map("", "Q", ":q<CR>", opt)
 
 -- insert 模式下，跳到行首行尾
 map("i", "<C-h>", "<ESC>I", opt)
