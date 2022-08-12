@@ -1,31 +1,3 @@
-
-## packer
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
-```bash
-# nvim-telescope/telescope.nvim 所需依赖
-brew install ripgrep
-npm install -g fd-find
-```
-
-```bash
-brew install stylua
-```
-
-```bash
-pnpm i -D prettier eslint
-```
-
-```bash
-rustup component add rustfmt
-```
-
-
------------------
-
 <div align='center'>
   <img src='https://img.shields.io/badge/neovim-0.7.2-4D8A38' alt='icon'/>
 </div>
@@ -34,10 +6,18 @@ rustup component add rustfmt
 
 ## 如何安装
 
-### 克隆仓库
 首先确保已经安装 [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
-克隆本仓库
+### 安装 packer
+
+Packer 是一个插件管理器
+
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+### 克隆仓库
 
 ```bash
 git clone git@github.com:KURANADO2/neovim-config.git --depth=1 ~/.config/nvim
@@ -48,70 +28,52 @@ git clone git@github.com:KURANADO2/neovim-config.git --depth=1 ~/.config/nvim
 ```bash
 # nvim-telescope/telescope.nvim 所需依赖
 brew install ripgrep
-# kdheepak/lazygit.nvim 所需依赖
-brew install jesseduffield/lazygit/lazygit
-# davidgranstrom/nvim-markdown-preview
+npm install -g fd-find
+
+# 格式化相关
+brew install stylua
+pnpm i -D prettier eslint
+rustup component add rustfmt
+
+# davidgranstrom/nvim-markdown-preview 所需依赖
 brew install pandoc
 npm install -g live-server
+
 # Esc 切换为英文输入法所需依赖
 brew tap daipeihust/tap && brew install im-select
+
 # 识别 python3, See Also: https://www.reddit.com/r/neovim/comments/i65pwd/no_python3_provider_found_run_checkhealth_provider/
 python3 -m pip install --user --upgrade pynvim
 ```
 
 ### 插件安装
 
-进入 neovim 执行
+进入 neovim 执行：
 
 ```bash
-:PlugInstall
+:PackerSync
 ```
 
-### 部分插件需编译
+### LSP Laguage Server 安装
 
-```bash
-cd ~/.config/nvim/plugged/vim-hexokinase
-# 需确保已经安装了 Golang
-make hexokinase
-```
-
-### 自动补全
-
+进入 neovim 执行：
 neovim/nvim-lspconfig 自动补全
 
 ```bash
-# Rust
-brew install rust-analyzer
-# Python
-npm i -g pyright
-# Lua
-brew install ninja
-cd ~/Opt
-git clone --depth=1 https://github.com/sumneko/lua-language-server
-cd lua-language-server
-git submodule update --depth 1 --init --recursive
-cd 3rd/luamake
-./compile/install.sh
-cd ../..
-./3rd/luamake/luamake rebuild
+:LspInstallInfo
 ```
 
-环境变量配置
-
-~/.zshrc 文件增加如下配置
-
-```bash
-# lua-language-server
-export LUA_LANGUAGE_SERVER_HOME='/Users/jing/Opt/lua-language-server'
-
-# PATH
-export PATH="$LUA_LANGUAGE_SERVER_HOME/bin"
-```
+选择需要的 Language Server，按 `i` 安装、`x` 卸载、`U` 更新
 
 ### 语法高亮
 
-nvim-treesitter/nvim-treesitter 为指定语言开启语法高亮
-进入 neovim 执行
+进入 neovim 执行：
+
+```bash
+:TSInstallInfo 查看可用的语言
+```
+
+执行 `:TSInstall 语言名称` 即可安装，例如：
 
 ```bash
 :TSInstall c
@@ -139,10 +101,12 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | `K`     | 向上移动 5 行                    |
 | `H`     | 移动到行首（行首不为空的字符处） |
 | `L`     | 移动到行尾                       |
-| `⌃` `j` | 向下翻页 5 行                    |
-| `⌃` `k` | 向上翻页 5 行                    |
-| `⌃` `h` | 向左翻页 10 个字符               |
-| `⌃` `l` | 向右翻页 10 个字符               |
+| `⌃` `j` | Nomal 模式下向下翻页 5 行        |
+| `⌃` `k` | Nomal 模式下向上翻页 5 行        |
+| `⌃` `h` | 向左翻页 20 个字符               |
+| `⌃` `l` | 向右翻页 20 个字符               |
+| `⌃` `j` | Visual 模式下向下移动选中文本    |
+| `⌃` `k` | Visual 模式下向下移动选中文本    |
 
 ### 多光标
 
@@ -166,6 +130,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | -           | -                                 |
 | `v` `i` `e` | 全选                              |
 | `↩︎`         | 扩选（相当于 vi' vi" vi( vi{ 等） |
+| `⌫`         | 缩选（相当于 vi' vi" vi( vi{ 等） |
 
 ### 撤销
 
@@ -174,16 +139,47 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | `u`    | 撤销 |
 | `U`    | 重做 |
 
+### LSP
+
+| 快捷键      | 功能                   |
+| -           | -                      |
+| `␣` `r` `n` | 变量重命名             |
+| `␣` `c` `a` | Code Action            |
+| `g` `d`     | 跳转到定义             |
+| `g` `r`     | 查看所有引用的地方     |
+| `g` `h`     | 查看提示               |
+| `g` `p`     | 以浮动方式查看错误提示 |
+| `g` `j`     | 跳转到下一个错误提示   |
+| `g` `k`     | 跳转到上一个错误提示   |
+| `⌃` `j`     | 向下选择代码提示       |
+| `⌃` `k`     | 向上选择代码提示       |
+
+### 代码折叠
+
+| 快捷键  | 功能     |
+| -       | -        |
+| `z` `c` | 代码折叠 |
+| `z` `o` | 代码展开 |
+
 ### 更改包裹符号
 
 | 快捷键          | 功能                                                                                         |
 | -               | -                                                                                            |
 | `c` `s` `'` `"` | 将单引号更改为双引号（此处的单引号、双引号也可以替换为其它符号，如圆括号、中括号、花括号等） |
 
+### 注释
+
+| 快捷键      | 功能                                 |
+| -           | -                                    |
+| `g` `c` `c` | Normal 模式下注释/取消注释           |
+| `g` `c`     | Visual 模式下注释/取消注释           |
+| `⌃` `/`     | Normal 或 Visual 模式下注释/取消注释 |
+
 ### 格式化
 
 | 快捷键      | 功能                                                                               |
 | -           | -                                                                                  |
+| `␣` `f`     | 格式化代码                                                                         |
 | `␣` `p` `j` | 预览格式化后的 Json                                                                |
 | `␣` `w` `j` | 格式化 Json                                                                        |
 | `␣` `a`     | 根据特定字符对齐文本（快捷键之后需要输入字符后回车，以根据输入的字符进行文本对齐） |
@@ -194,8 +190,6 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | -           | -                                    |
 | `S`         | 保存文件                             |
 | `Q`         | 关闭文件                             |
-| `␣` `r` `c` | 打开 `~/.config/nvim/init.nvim` 文件 |
-| `␣` `r` `s` | 刷新 `~/.config/nvim/init.nvim` 文件 |
 
 ### 文件树
 
@@ -211,7 +205,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | `a`     | 创建文件或目录（如果以 / 结尾则表示创建目录，否则即为创建文件） |
 | `R`     | 刷新文件树                                                      |
 | `I`     | 显示/隐藏 .gitignore 忽略的文件                                 |
-| `H`     | 显示/隐藏 dotfiles（隐藏文件）                                  |
+| `.`     | 显示/隐藏 dotfiles（隐藏文件）                                  |
 
 ### 大纲
 
@@ -223,12 +217,14 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 ### 标签页切换
 
-| 快捷键 | 功能               |
-| -      | -                  |
-| `E`    | 切换到左侧标签页   |
-| `R`    | 切换到右侧标签页   |
-| `W`    | 切换到最左侧标签页 |
-| `T`    | 切换到最右侧标签页 |
+| 快捷键  | 功能                 |
+| -       | -                    |
+| `E`     | 切换到左侧标签页     |
+| `R`     | 切换到右侧标签页     |
+| `W`     | 切换到最左侧标签页   |
+| `T`     | 切换到最右侧标签页   |
+| `t` `h` | 将当前标签页向左移动 |
+| `t` `l` | 将当前标签页向右移动 |
 
 ### 窗口分割
 
@@ -240,6 +236,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | `s` `l` | 向右侧分割出新窗口                 |
 | `s` `d` | 将水平分割的窗口重新布局为垂直分割 |
 | `s` `f` | 将垂直分割的窗口重新布局为水平分割 |
+| `s` `=` | 调整窗口为等比例                   |
 
 ### 窗口大小
 
@@ -279,6 +276,8 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | `␣` `f` `g` | 搜索字符串   |
 | `␣` `f` `b` | 搜索 Buffer  |
 | `␣` `f` `h` | 搜索 Tag     |
+| `⌃` `j`     | 向上移动     |
+| `⌃` `k`     | 向下移动     |
 
 ### 书签
 
@@ -295,8 +294,8 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 | 快捷键      | 功能         |
 | -           | -            |
-| `␣` `g` `g` | 打开 Lazygit |
-| `Q`         | 退出 Lazygit |
+| `␣` `t` `g` | 打开 Lazygit |
+| `q`         | 退出 Lazygit |
 
 ### 输入法
 
@@ -308,11 +307,14 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 | 快捷键      | 功能                          |
 | -           | -                             |
-| `␣` `s` `r` | Markdown 预览                 |
+| `␣` `m` `p` | Markdown 预览                 |
 | `␣` `t` `m` | 启用/禁用 Markdown table 模式 |
 
 ### 终端
 
-| 快捷键  | 功能     |
-| -       | -        |
-| `␣` `/` | 打开终端 |
+| 快捷键      | 功能                   |
+| -           | -                      |
+| `␣` `t` `a` | 以浮动窗口方式打开终端 |
+| `␣` `t` `b` | 在右侧打开终端         |
+| `␣` `t` `c` | 在下方打开终端         |
+| `Q`         | 退出终端               |
