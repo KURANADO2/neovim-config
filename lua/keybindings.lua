@@ -82,7 +82,7 @@ map("n", "*", "*zz", opt)
 map("n", "#", "#zz", opt)
 
 -- 替换
--- map("n", "\\s", ":%s///g<left><left><left>", opt)
+map("", "\\s", ":%s///g<left><left><left>", opt)
 
 -- 取消高亮
 map("n", "<LEADER><CR>", ":nohlsearch<CR>", opt)
