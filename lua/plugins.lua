@@ -10,8 +10,10 @@ packer.startup(function(use)
     -- bufferline
     use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
     -- lualine
-    use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-    use("arkav/lualine-lsp-progress")
+    -- use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+    -- use("arkav/lualine-lsp-progress")
+    -- windline
+    use("windwp/windline.nvim")
     -- telescope
     use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
     -- telescope extensions
@@ -19,7 +21,7 @@ packer.startup(function(use)
     -- project
     use("ahmedkhalf/project.nvim")
     -- dashboard-nvim
-    use({ "glepnir/dashboard-nvim"})
+    use({ "glepnir/dashboard-nvim" })
     -- treesitter
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     --------------------- LSP --------------------
