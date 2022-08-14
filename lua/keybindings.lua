@@ -115,14 +115,19 @@ pluginKeys.nvimTreeList = {
     { key = "i", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
     { key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
     -- 文件操作
-    { key = "<F5>", action = "refresh" },
+    { key = "R", action = "refresh" },
     { key = "a", action = "create" },
     { key = "d", action = "remove" },
     { key = "r", action = "rename" },
     { key = "x", action = "cut" },
     { key = "c", action = "copy" },
     { key = "p", action = "paste" },
+    -- 在 Finder 中打开目录
     { key = "s", action = "system_open" },
+    -- 展开所有目录
+    { key = "E", action = "expand_all" },
+    -- 缩起所有目录
+    { key = "W", action = "collapse_all" },
 }
 
 -- bufferline

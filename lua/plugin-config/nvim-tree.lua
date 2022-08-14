@@ -7,19 +7,14 @@ end
 -- 列表操作快捷键
 local list_keys = require("keybindings").nvimTreeList
 nvim_tree.setup({
-    -- 不显示 git 状态图标
+    -- 显示 git 状态图标
     git = {
-        enable = false,
-    },
-    -- project plugin 需要这样设置
-    update_cwd = true,
-    update_focused_file = {
         enable = true,
-        update_cwd = true,
     },
-    -- 隐藏 .文件 和 node_modules 文件夹
     filters = {
-        dotfiles = true,
+        -- 显示隐藏文件
+        dotfiles = false,
+        -- 隐藏 .git, node_modules 文件夹
         custom = { "node_modules" },
     },
     view = {
@@ -40,6 +35,64 @@ nvim_tree.setup({
         -- 显示图标
         signcolumn = "yes",
     },
+    renderer = {
+        add_trailing = false,
+        group_empty = false,
+        highlight_git = true,
+        full_name = false,
+        highlight_opened_files = "none",
+        root_folder_modifier = ":~",
+        indent_markers = {
+            enable = true,
+            inline_arrows = true,
+            icons = {
+                corner = "└",
+                edge = "│",
+                item = "│",
+                none = " ",
+            },
+        },
+        icons = {
+            webdev_colors = true,
+            git_placement = "before",
+            padding = " ",
+            symlink_arrow = " ➛ ",
+            show = {
+                file = true,
+                folder = true,
+                folder_arrow = true,
+                git = true,
+            },
+            glyphs = {
+                default = "",
+                symlink = "",
+                bookmark = "",
+                folder = {
+                    -- arrow_closed = "",
+                    -- arrow_open = "",
+                    arrow_closed = "",
+                    arrow_open = "",
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                    symlink_open = "",
+                },
+                git = {
+                    unstaged = "✗",
+                    staged = "✓",
+                    unmerged = "",
+                    renamed = "➜",
+                    untracked = "★",
+                    deleted = "",
+                    ignored = "◌",
+                },
+            },
+        },
+        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+        symlink_destination = true,
+    },
     actions = {
         open_file = {
             -- 首次打开大小适配
@@ -51,7 +104,7 @@ nvim_tree.setup({
     -- wsl install -g wsl-open
     -- https://github.com/4U6U57/wsl-open/
     system_open = {
-        cmd = "wsl-open", -- mac 直接设置为 open
+        cmd = "open", -- mac 直接设置为 open
     },
     -- project.nvim plugin 需要这样设置
     update_cwd = true,
