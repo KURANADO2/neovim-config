@@ -44,6 +44,9 @@ brew tap daipeihust/tap && brew install im-select
 
 # 识别 python3, See Also: https://www.reddit.com/r/neovim/comments/i65pwd/no_python3_provider_found_run_checkhealth_provider/
 python3 -m pip install --user --upgrade pynvim
+
+# rust-analyzer
+brew install rust-analyzer
 ```
 
 ### 插件安装
