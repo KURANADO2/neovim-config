@@ -162,8 +162,6 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | 快捷键          | 功能               |
 | -               | -                  |
 | `␣` `s` `w`     | 交换参数位置       |
-| `␣` `h` `s` `w` | 与左侧参数交换位置 |
-| `␣` `l` `s` `w` | 与右侧参数交换位置 |
 
 ### 代码折叠
 
