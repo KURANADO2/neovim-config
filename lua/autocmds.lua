@@ -39,17 +39,17 @@ autocmd("BufWritePre", {
     callback = vim.lsp.buf.formatting_sync,
 })
 
--- 修改lua/plugins.lua 自动更新插件
-autocmd("BufWritePost", {
-    group = myAutoGroup,
-    -- autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    callback = function()
-        if vim.fn.expand("<afile>") == "lua/plugins.lua" then
-            vim.api.nvim_command("source lua/plugins.lua")
-            vim.api.nvim_command("PackerSync")
-        end
-    end,
-})
+-- -- 修改lua/plugins.lua 自动更新插件
+-- autocmd("BufWritePost", {
+--     group = myAutoGroup,
+--     -- autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--     callback = function()
+--         if vim.fn.expand("<afile>") == "lua/plugins.lua" then
+--             vim.api.nvim_command("source lua/plugins.lua")
+--             vim.api.nvim_command("PackerSync")
+--         end
+--     end,
+-- })
 
 -- Highlight on yank
 autocmd("TextYankPost", {
