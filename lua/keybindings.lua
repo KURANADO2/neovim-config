@@ -357,4 +357,11 @@ pluginKeys.mapMarkdownPreview = function()
     map("n", "<LEADER>mp", ":MarkdownPreview<CR>", opt)
 end
 
+-- nvim-markdown-preview
+pluginKeys.mapIswap = function()
+    map("n", "<LEADER>sw", ":ISwapWith<CR>", opt)
+    map("n", "<LEADER>hsw", ":ISwapNodeWithLeft<CR>", opt)
+    map("n", "<LEADER>lsw", ":ISwapNodeWithRight<CR>", opt)
+end
+
 return pluginKeys

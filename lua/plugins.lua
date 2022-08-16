@@ -84,6 +84,8 @@ packer.startup(function(use)
     use({ "davidgranstrom/nvim-markdown-preview" })
     -- 打开文件时自动跳转到光标上次所在位置
     use({ "ethanholz/nvim-lastplace" })
+    -- 交换参数位置
+    use({ "mizlan/iswap.nvim" })
 end)
 
 -- -- 每次保存 plugins.lua 自动安装插件
