@@ -320,7 +320,7 @@ pluginKeys.comment = {
 }
 -- ctrl + /
 map("n", "<C-_>", "gcc", { noremap = false })
-map("v", "<C-_>", "gcc", { noremap = false })
+map("v", "<C-_>", "gc", { noremap = false })
 
 -- 自定义 toggleterm 3 个不同类型的命令行窗口
 -- <leader>ta 浮动
