@@ -92,6 +92,9 @@ map("", "S", ":w<CR>", opt)
 
 -- 退出
 -- map("n", "qq", ":q!<CR>", opt)
+-- 关闭当前 buffer See Also: https://github.com/akinsho/bufferline.nvim/issues/513
+map("n", "q", ":bp <BAR> bd #<CR>", opt)
+-- 退出
 map("", "Q", ":q<CR>", opt)
 
 -- insert 模式下，跳到行首行尾
