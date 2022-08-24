@@ -195,10 +195,11 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 ### 文件
 
-| 快捷键      | 功能                                 |
-| -           | -                                    |
-| `S`         | 保存文件                             |
-| `Q`         | 关闭文件                             |
+| 快捷键 | 功能            |
+| -      | -               |
+| `q`    | 关闭当前 Buffer |
+| `S`    | 保存文件        |
+| `Q`    | 退出            |
 
 ### 文件树
 
