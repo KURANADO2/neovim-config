@@ -27,7 +27,7 @@ require("plugin-config.smartim")
 require("plugin-config.nvim-scrollbar")
 require("plugin-config.tabular")
 require("plugin-config.aerial")
-require("plugin-config.nvim-markdown-preview")
+require("plugin-config.markdown-preview")
 require("plugin-config.nvim-lastplace")
 require("plugin-config.iswap")
 

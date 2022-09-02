@@ -81,7 +81,7 @@ packer.startup(function(use)
     -- 多光标
     use({ "mg979/vim-visual-multi" })
     -- Markdown 预览
-    use({ "davidgranstrom/nvim-markdown-preview" })
+    use({ "iamcco/markdown-preview.nvim" })
     -- 打开文件时自动跳转到光标上次所在位置
     use({ "ethanholz/nvim-lastplace" })
     -- 交换参数位置

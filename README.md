@@ -57,6 +57,16 @@ brew install rust-analyzer
 :PackerSync
 ```
 
+markdown-preview.nvim 插件需要手动安装：
+
+```bash
+cd ~/.local/share/nvim/site/pack/packer/start/
+git clone https://github.com/iamcco/markdown-preview.nvim.git
+cd markdown-preview.nvim
+yarn install
+yarn build
+```
+
 ### LSP Laguage Server 安装
 
 进入 neovim 执行：
