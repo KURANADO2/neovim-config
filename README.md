@@ -167,6 +167,12 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | `⌃` `j`     | 向下选择代码提示       |
 | `⌃` `k`     | 向上选择代码提示       |
 
+### 其它代码补全
+
+| 快捷键  | 功能           |
+| -       | -              |
+| `␣` `;` | 在行尾补上分号 |
+
 ### 参数
 
 | 快捷键          | 功能               |
