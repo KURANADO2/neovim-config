@@ -59,6 +59,8 @@ map("v", "<C-k>", ":move '<-2<CR>gv-gv", opt)
 map("", "vL", "v$h", opt)
 map("", "vie", "ggVG", opt)
 
+map("n", "<LEADER>;", "A;<Esc>", opt)
+
 -- 上下翻页
 map("n", "<C-j>", "5<C-e>", opt)
 map("n", "<C-k>", "5<C-y>", opt)
