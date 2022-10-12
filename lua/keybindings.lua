@@ -43,30 +43,41 @@ map("t", "<Esc>", "<C-\\><C-n>", opt)
 -- map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
 
 -- 光标移动
-map("", "J", "5j", opt)
-map("", "K", "5k", opt)
-map("", "H", "^", opt)
-map("", "L", "$", opt)
+-- map("", "J", "5j", opt)
+-- map("", "K", "5k", opt)
+-- map("", "H", "^", opt)
+-- map("", "L", "$", opt)
+map("", "<C-j>", "5j", opt)
+map("", "<C-k>", "5k", opt)
+map("", "<C-h>", "^", opt)
+map("", "<C-l>", "$", opt)
 
 -- visual 模式下缩进代码
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
 -- 上下移动选中文本
-map("v", "<C-j>", ":move '>+1<CR>gv-gv", opt)
-map("v", "<C-k>", ":move '<-2<CR>gv-gv", opt)
+-- map("v", "<C-j>", ":move '>+1<CR>gv-gv", opt)
+-- map("v", "<C-k>", ":move '<-2<CR>gv-gv", opt)
+map("v", "J", ":move '>+1<CR>gv-gv", opt)
+map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- 选中文本
-map("", "vL", "v$h", opt)
+map("", "v<C-h>", "v^", opt)
+map("", "v<C-l>", "v$h", opt)
 map("", "vie", "ggVG", opt)
 
 map("n", "<LEADER>;", "A;<Esc>", opt)
 
 -- 上下翻页
-map("n", "<C-j>", "5<C-e>", opt)
-map("n", "<C-k>", "5<C-y>", opt)
+-- map("n", "<C-j>", "5<C-e>", opt)
+-- map("n", "<C-k>", "5<C-y>", opt)
+map("n", "J", "5<C-e>", opt)
+map("n", "K", "5<C-y>", opt)
 -- 左右翻页
-map("n", "<C-h>", "20zh", opt)
-map("n", "<C-l>", "20zl", opt)
+-- map("n", "<C-h>", "20zh", opt)
+-- map("n", "<C-l>", "20zl", opt)
+map("n", "H", "20zh", opt)
+map("n", "L", "20zl", opt)
 
 -- 在visual 模式里粘贴不要复制
 map("v", "p", '"_dP', opt)
