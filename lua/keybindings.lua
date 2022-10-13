@@ -29,26 +29,16 @@ map("n", "<right>", ":vertical resize+5<CR>", opt)
 -- 等比例
 map("n", "s=", "<C-w>=", opt)
 -- 关闭当前
--- map("n", "sc", "<C-w>c", opt)
+map("n", "sc", "<C-w>c", opt)
 -- 关闭其他
--- map("n", "so", "<C-w>o", opt)
+map("n", "so", "<C-w>o", opt)
 
 -- Terminal相关
--- map("n", "<leader>t", ":set splitbelow<CR>:split<CR>:res +10<CR>:term<CR>", opt)
--- map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
--- map("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opt)
--- map("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opt)
--- map("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opt)
--- map("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opt)
 
 -- 光标移动
--- map("", "J", "5j", opt)
--- map("", "K", "5k", opt)
--- map("", "H", "^", opt)
--- map("", "L", "$", opt)
-map("", "<C-j>", "5j", opt)
-map("", "<C-k>", "5k", opt)
+map("", "J", "5j", opt)
+map("", "K", "5k", opt)
 map("", "<C-h>", "^", opt)
 map("", "<C-l>", "$", opt)
 
@@ -56,10 +46,8 @@ map("", "<C-l>", "$", opt)
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
 -- 上下移动选中文本
--- map("v", "<C-j>", ":move '>+1<CR>gv-gv", opt)
--- map("v", "<C-k>", ":move '<-2<CR>gv-gv", opt)
-map("v", "J", ":move '>+1<CR>gv-gv", opt)
-map("v", "K", ":move '<-2<CR>gv-gv", opt)
+map("v", "<C-j>", ":move '>+1<CR>gv-gv", opt)
+map("v", "<C-k>", ":move '<-2<CR>gv-gv", opt)
 
 -- 选中文本
 map("", "v<C-h>", "v^", opt)
@@ -69,13 +57,9 @@ map("", "vie", "ggVG", opt)
 map("n", "<LEADER>;", "A;<Esc>", opt)
 
 -- 上下翻页
--- map("n", "<C-j>", "5<C-e>", opt)
--- map("n", "<C-k>", "5<C-y>", opt)
-map("n", "J", "5<C-e>", opt)
-map("n", "K", "5<C-y>", opt)
+map("n", "<C-j>", "5<C-e>", opt)
+map("n", "<C-k>", "5<C-y>", opt)
 -- 左右翻页
--- map("n", "<C-h>", "20zh", opt)
--- map("n", "<C-l>", "20zl", opt)
 map("n", "H", "20zh", opt)
 map("n", "L", "20zl", opt)
 
