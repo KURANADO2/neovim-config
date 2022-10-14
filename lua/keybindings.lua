@@ -37,28 +37,33 @@ map("n", "so", "<C-w>o", opt)
 map("t", "<Esc>", "<C-\\><C-n>", opt)
 
 -- 光标移动
-map("", "J", "5j", opt)
-map("", "K", "5k", opt)
+map("", "<C-j>", "5j", opt)
+map("", "<C-k>", "5k", opt)
 map("", "<C-h>", "^", opt)
 map("", "<C-l>", "$", opt)
 
 -- visual 模式下缩进代码
 map("v", "<", "<gv", opt)
 map("v", ">", ">gv", opt)
+
 -- 上下移动选中文本
-map("v", "<C-j>", ":move '>+1<CR>gv-gv", opt)
-map("v", "<C-k>", ":move '<-2<CR>gv-gv", opt)
+map("v", "J", ":move '>+1<CR>gv-gv", opt)
+map("v", "K", ":move '<-2<CR>gv-gv", opt)
+
+-- 对调行模式和块模式
+map("n", "<C-v>", "V", opt)
+map("n", "V", "<C-v>", opt)
 
 -- 选中文本
 map("", "v<C-h>", "v^", opt)
 map("", "v<C-l>", "v$h", opt)
 map("", "vie", "ggVG", opt)
-
+-- 在行尾添加分号
 map("n", "<LEADER>;", "A;<Esc>", opt)
 
 -- 上下翻页
-map("n", "<C-j>", "5<C-e>", opt)
-map("n", "<C-k>", "5<C-y>", opt)
+map("n", "J", "5<C-e>", opt)
+map("n", "K", "5<C-y>", opt)
 -- 左右翻页
 map("n", "H", "20zh", opt)
 map("n", "L", "20zl", opt)
