@@ -61,6 +61,6 @@ null_ls.setup({
     diagnostics_format = "[#{s}] #{m}",
     on_attach = function(client)
         -- 自定义 :Format 命令
-        vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()']])
+        vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format()']])
     end,
 })
