@@ -1,5 +1,5 @@
 <div align='center'>
-  <img src='https://img.shields.io/badge/neovim-0.7.2-4D8A38' alt='icon'/>
+  <img src='https://img.shields.io/badge/neovim-0.8.0-4D8A38' alt='icon'/>
 </div>
 
 ![](images/demo.png)
