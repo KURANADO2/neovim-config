@@ -65,8 +65,8 @@ map("n", "<LEADER>;", "A;<Esc>", opt)
 map("n", "J", "5<C-e>", opt)
 map("n", "K", "5<C-y>", opt)
 -- 左右翻页
-map("n", "H", "20zh", opt)
-map("n", "L", "20zl", opt)
+map("n", "H", "50zh", opt)
+map("n", "L", "50zl", opt)
 
 -- 在visual 模式里粘贴不要复制
 map("v", "p", '"_dP', opt)
