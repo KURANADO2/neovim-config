@@ -89,6 +89,9 @@ map("", "\\s", ":%s///g<left><left><left>", opt)
 -- 取消高亮
 map("n", "<LEADER><CR>", ":nohlsearch<CR>", opt)
 
+-- 录制宏
+map("n", "sg", "q", opt)
+
 -- 保存
 map("", "S", ":w<CR>", opt)
 
