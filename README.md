@@ -153,6 +153,12 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | `↩︎`         | 扩选（相当于 vi' vi" vi( vi{ 等） |
 | `⌫`         | 缩选（相当于 vi' vi" vi( vi{ 等） |
 
+### 宏
+
+| 快捷键 | 功能                                                    |
+| -      | -                                                       |
+| `sga`  | 录制宏到寄存器 a，同理 sgb 即录制宏到寄存器 b，以此类推 |
+
 ### 撤销
 
 | 快捷键 | 功能 |
