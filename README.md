@@ -39,7 +39,7 @@ rustup component add rustfmt
 brew install pandoc
 npm install -g live-server
 
-# Esc 切换为英文输入法所需依赖（M1 用户请使用 M1 版本 im-select：https://github.com/daipeihust/im-select#m1-mac-support，将该脚本下载到 /usr/local/bin 目录下并给予执行权限即可。不要使用 brew 安装，brew 安装的是 Intel 版本）
+# Esc 离开 Insert 模式自动切换输入法为英文
 brew tap daipeihust/tap && brew install im-select
 
 # 识别 python3, See Also: https://www.reddit.com/r/neovim/comments/i65pwd/no_python3_provider_found_run_checkhealth_provider/
