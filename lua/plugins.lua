@@ -9,9 +9,6 @@ packer.startup(function(use)
     use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
     -- bufferline
     use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
-    -- lualine
-    -- use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-    -- use("arkav/lualine-lsp-progress")
     -- windline
     use("windwp/windline.nvim")
     -- telescope
@@ -65,7 +62,7 @@ packer.startup(function(use)
     -- terminal
     use({ "akinsho/toggleterm.nvim" })
     -- 输入法切换
-    use({ "ybian/smartim" })
+    use({ "keaising/im-select.nvim" })
     -- Json 格式化
     use({ "axiaoxin/vim-json-line-format" })
     -- 滚动条
@@ -87,14 +84,3 @@ packer.startup(function(use)
     -- 交换参数位置
     use({ "mizlan/iswap.nvim" })
 end)
-
--- -- 每次保存 plugins.lua 自动安装插件
--- pcall(
---     vim.cmd,
---     [[
---     augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost plugins.lua source <afile> | PackerSync
---     augroup end
---   ]]
--- )
