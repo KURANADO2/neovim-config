@@ -144,6 +144,8 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 | `⌃` `↓` | 向下创建多光标                                     |
 | `⇧` `←` | 向左扩选                                           |
 | `⇧` `→` | 向右扩选                                           |
+| `"+y`   | 多光标下的文本复制                                 |
+| `"+p`   | 多光标下的文本粘贴                                 |
 
 ### 选中
 
